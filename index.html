@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-storage.js"></script>
+    <style>
+        body {
+            background-color: #f6f6f6;
+        }
+
+        label {
+            background: rgb(255, 30, 0);
+            padding: 10px;
+            border-radius: 5px;
+            position: sticky;
+            box-shadow: 0px 0px 5px 4px #dadada;
+            top: 13px;
+            color: whitesmoke;
+        }
+
+        ul#show li img {
+            max-width: 50%;
+        }
+
+        input[type="submit"] {
+            background: blue;
+            padding: 8px;
+            border-radius: 3px;
+            border: none;
+            color: white;
+            position: sticky;
+            box-shadow: 0px 0px 5px 4px #dadada;
+            top: 13px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <input type="file" id="file" accept="image/*" style="display: none;">
+    <label for="file">Chose A Photo</label>
+    <input type="submit" value="Upload Image" onclick="uploadImg()">
+    <!-- <img src="" alt="" id="image" style="width: 600px;"> -->
+    <ul id="show">
+
+    </ul>
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyAMu_YZnO_hlSx2d5H4IyqGZ1cfInVpyY8",
+            authDomain: "fb-data-50ef0.firebaseapp.com",
+            projectId: "fb-data-50ef0",
+            storageBucket: "fb-data-50ef0.appspot.com",
+            messagingSenderId: "806405117871",
+            appId: "1:806405117871:web:1724c4213fae510eb9815a"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+        db.settings({ timestampsInSnapshots: true });
+        var storage = firebase.storage().ref();
+    </script>
+
+    <!-- <script src="https://firebasestorage.googleapis.com/v0/b/fb-data-50ef0.appspot.com/o/js.js?alt=media&token=134e108e-d70e-4624-970b-535fe3fc4192"></script> -->
+    <script src="fb.js"></script>
+</body>
+
+</html>
