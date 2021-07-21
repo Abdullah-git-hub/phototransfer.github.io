@@ -28,7 +28,7 @@ function uploadImg() {
         contentType: file.type,
     }
 
-    console.log("Process Started")
+    alert("Your image is being uploaded...")
 
     storage.child(fileName).put(file, metadata)
         .then(snap => snap.ref.getDownloadURL())
@@ -46,8 +46,7 @@ function uploadImg() {
                 // snapshot.docs.forEach(e => {
                 //     console.log(e.data());
                 // });
-                console.clear();
-                console.log("Process Finished!!!")
+                alert("Uploading finished !!!")
             })
         })
 }
